@@ -17,6 +17,7 @@ function addListeners (element) {
     element[i].addEventListener('click', updateMemory)
     element[i].addEventListener('click', readout)
     element[i].addEventListener('click', equals)
+    element[i].addEventListener('click', allClear)
   }
 }
 // The calculator's update window
@@ -44,7 +45,11 @@ function equals (event) {
   }
 }
 
- /* if (event.target.classList.contains('equals')) {
-    document.getElementsByClassName('display')[0].innerHTML = eval(memory)
-  }
-}*/
+// Clear memory
+function allClear (event) {
+ if (event.target.classList.contains('all-clear')) {
+  document.getElementsByClassName('display')[0].innerHTML = 
+  memory = []
+ } 
+}
+
