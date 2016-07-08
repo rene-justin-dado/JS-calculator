@@ -1,40 +1,33 @@
-html, body {
-  height: 100%;
-  font-family: 'Open Sans', sans-serif
-}
-
 body {
+  margin-top: 10%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  background-color: #0B1D38;
 }
 
 .board {
-  width: 420px;
-  height: 420px;
   display: flex;
   flex-wrap: wrap;
+  height: 500px;
+  width: 420px;
 }
 
 .board div {
-  color: green;
-  font-size: 2rem;
-  width: 75px;
-  height: 75px;
-  border: 2px #ccc dotted;
-  border-radius: 10%;
-  background-color: white;
-  margin: 3px;
-  display: flex;
   align-items: center;
+  background-color: #647FA8;
+  border: 3px #647FA8 solid;
+  box-shadow: 2px 2px 50px #000000;
+  color: white;
+  display: flex;
+  font-size: 2rem;
+  height: 75px;
   justify-content: center;
+  margin: 1px;
+  width: 125px;
 }
 
 .board div:hover {
-  background-color: white;
+  background-color: #0B1D38;
 }
 
-.display {
-  flex: 5;
 
-}
