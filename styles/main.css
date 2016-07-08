@@ -1,8 +1,8 @@
 body {
-  margin-top: 10%;
+  background-color: #0B1D38;
   display: flex;
   justify-content: center;
-  background-color: #0B1D38;
+  margin-top: 10%;
 }
 
 .board {
@@ -19,11 +19,16 @@ body {
   box-shadow: 2px 2px 50px #000000;
   color: white;
   display: flex;
+  flex-grow: 1;
   font-size: 2rem;
   height: 75px;
   justify-content: center;
   margin: 1px;
   width: 125px;
+}
+
+div.display {
+  width: 100%;
 }
 
 .board div:hover {
