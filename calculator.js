@@ -6,7 +6,7 @@ User Story: I can keep chaining mathematical operations together until I hit the
 */
 
 // Use to store memory (Should this be an array?)
-var memory = ''
+var memory = []
 
  // define listeners for each button (click only OR click and keypress?)
 
@@ -14,7 +14,7 @@ addListeners(document.getElementsByClassName('board')[0].children)
 function addListeners (element) {
   for (var i = 0; i < element.length; i++) {
     // Binding Event Listeners
-    element[i].addEventListener('click', concatNum)
+    element[i].addEventListener('click', updateMemory)
     element[i].addEventListener('click', readout)
     element[i].addEventListener('click', equals)
   }
@@ -27,17 +27,24 @@ function readout (event) {
 }
 
 // Chain numbers on the display window
-function concatNum (event) {
+function updateMemory (event) {
   if (event.target.classList.contains('number')) {
-    memory += event.target.innerHTML
+    memory.push(event.target.innerHTML)
   } else if (event.target.classList.contains('operator')) {
-    memory += event.target.innerHTML
+    memory.push(event.target.innerHTML)
   }
 }
 
 // Use operator given operator on numbers
 function equals (event) {
   if (event.target.classList.contains('equals')) {
-    document.getElementsByClassName('display')[0].innerHTML = eval(memory)
+      var result = eval(memory.join(''))
+      document.getElementsByClassName('display')[0].innerHTML = result
+      memory = [result]
   }
 }
+
+ /* if (event.target.classList.contains('equals')) {
+    document.getElementsByClassName('display')[0].innerHTML = eval(memory)
+  }
+}*/
