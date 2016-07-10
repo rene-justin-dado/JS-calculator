@@ -4,7 +4,6 @@ addListeners(document.getElementsByClassName('board')[0].children)
 function addListeners (element) {
   for (var i = 0; i < element.length; i++) {
     // Binding Event Listeners
-    element[i].addEventListener('click', updateMemory)
     element[i].addEventListener('click', readout)
     element[i].addEventListener('click', equals)
     element[i].addEventListener('click', allClear)
@@ -14,13 +13,6 @@ function addListeners (element) {
 function readout (event) {
   if (event.target.classList.contains('number') || event.target.classList.contains('operator')) {
     document.getElementsByClassName('display')[0].innerHTML += event.target.innerHTML
-  }
-}
-//  Chain numbers on the display window
-function updateMemory (event) {
-  if (event.target.classList.contains('number')) {
-    memory.push(event.target.innerHTML)
-  } else if (event.target.classList.contains('operator')) {
     memory.push(event.target.innerHTML)
   }
 }
@@ -35,8 +27,7 @@ function equals (event) {
 // Clear memory
 function allClear (event) {
   if (event.target.classList.contains('all-clear')) {
-    document.getElementsByClassName('display')[0].innerHTML =
+    document.getElementsByClassName('display')[0].innerHTML = ''
     memory = []
   }
 }
-
